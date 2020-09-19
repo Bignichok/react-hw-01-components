@@ -1,0 +1,13 @@
+.transactionHistory {
+  width: 600px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.tableHead {
+  background-color: #9ad1ff;
+}
+
+.tableBody {
+  background-color: white;
+}

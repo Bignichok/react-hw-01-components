@@ -1,0 +1,8 @@
+.profile {
+  width: 280px;
+  display: block;
+  border: 2px solid grey;
+  margin: 0 auto;
+  background-color: #ffffff;
+  margin-bottom: 40px;
+}
