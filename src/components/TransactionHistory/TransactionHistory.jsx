@@ -4,7 +4,7 @@ import TransactionHistoryRow from "./TransactionHistoryRow/TransactionHistoryRow
 
 const TransactionHistory = ({ transactionData }) => {
   
-  return (
+  return !!transactionData &&
     <table className={styles.transactionHistory}>
       <thead className={styles.tableHead}>
         <tr className={styles.tableHeadRow}>
@@ -24,7 +24,6 @@ const TransactionHistory = ({ transactionData }) => {
         )
       )}</tbody>
     </table>
-  );
 };
 
 export default TransactionHistory;
