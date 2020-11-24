@@ -3,17 +3,16 @@ import styles from "./FriendList.module.css";
 import FriendsListItem from "./FriendsListItem/FriendsListItem";
 
 const FriendsList = ({ friends }) => {
-  const friendsListElements = friends.map((friend) => {
-    return (
-      <FriendsListItem
-        key={friend.id}
-        avatar={friend.avatar}
-        name={friend.name}
-        isOnline={friend.isOnline}
-      />
-    );
-  });
-  return <ul className={styles.friendsList}>{friendsListElements}</ul>;
-};
+  return !!friends &&  <ul className={styles.friendsList}>
+      {friends.map(({ id, avatar, name, isOnline }) =>
+        (<FriendsListItem
+          key={id}
+          avatar={avatar}
+          name={name}
+          isOnline={isOnline} />
+        ))}
+    </ul>;
+}
+
 
 export default FriendsList;

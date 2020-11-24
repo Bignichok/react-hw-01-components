@@ -3,16 +3,7 @@ import styles from "./TransactionHistory.module.css";
 import TransactionHistoryRow from "./TransactionHistoryRow/TransactionHistoryRow.jsx";
 
 const TransactionHistory = ({ transactionData }) => {
-  const transactionDataElements = transactionData.map((el) => {
-    return (
-      <TransactionHistoryRow
-        key={el.id}
-        type={el.type}
-        amount={el.amount}
-        currency={el.currency}
-      />
-    );
-  });
+  
   return (
     <table className={styles.transactionHistory}>
       <thead className={styles.tableHead}>
@@ -22,8 +13,16 @@ const TransactionHistory = ({ transactionData }) => {
           <th>Currency</th>
         </tr>
       </thead>
-
-      <tbody className={styles.tableBody}>{transactionDataElements}</tbody>
+      <tbody className={styles.tableBody}>
+        {transactionData.map(({ id, type, amount, currency }) => (
+          <TransactionHistoryRow
+            key={id}
+            type={type}
+            amount={amount}
+            currency={currency}
+          />
+        )
+      )}</tbody>
     </table>
   );
 };
